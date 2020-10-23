@@ -1,9 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-  <head>
-    <title>Liste contacts</title>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
+  />
+  <title>Asteroids | Epic Asteroids Game</title>
+</head>
   <body>
     <h2>Liste contacts</h2>
     <c:if test="${empty number}">

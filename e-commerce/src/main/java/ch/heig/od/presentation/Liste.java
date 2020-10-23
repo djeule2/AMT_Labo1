@@ -1,8 +1,12 @@
 package ch.heig.od.presentation;
 
 import ch.heig.od.business.ContactService;
+import ch.heig.od.business.dao.EcommerceDao;
+import ch.heig.od.business.dao.EcommerceDaoImpl;
 import ch.heig.od.model.Contact;
+import ch.heig.od.model.Produit;
 
+import javax.inject.Inject;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,17 +18,14 @@ import java.util.List;
 
 @WebServlet("/liste")
 public class Liste extends HttpServlet {
-    private ContactService service;
+    @Inject
+    private EcommerceDao service;
 
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        super.init(config);
-        service = (ContactService) getServletContext().getAttribute("service");
-    }
 
+   @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Contact> contacts = service.getContacts();
-        request.setAttribute("contacts", contacts);
-        request.getRequestDispatcher("/WEB-INF/pages/liste.jsp").forward(request, response);
+        List<Produit> produits = service.listProduits();
+        request.setAttribute("produit", produits);
+        request.getRequestDispatcher("/WEB-INF/pages/listeProduit.jsp").forward(request, response);
     }
 }

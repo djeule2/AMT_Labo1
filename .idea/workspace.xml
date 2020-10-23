@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1148dad5-0689-4669-8d2f-c6557d63b237" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/business/dao/EcommerceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/business/dao/EcommerceDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Categorie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Commande.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/LigneCommande.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Panier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Produit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/webapp/WEB-INF/pages/listeProduit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/webapp/foot.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/e-commerce/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/presentation/Ajoute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/presentation/Liste.java" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/presentation/Liste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/pl/business/ContactService.java" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/business/ContactService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/pl/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/model/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/pl/presentation/Ajoute.java" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/presentation/AjouteProuduit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/pl/presentation/ControlFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/presentation/ControlFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/pl/presentation/Liste.java" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/java/ch/heig/od/presentation/Liste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/webapp/WEB-INF/pages/ajoute.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/webapp/WEB-INF/pages/ajoute.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/webapp/WEB-INF/pages/liste.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/webapp/WEB-INF/pages/liste.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e-commerce/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/e-commerce/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/e-commerce" />
+  </component>
+  <component name="ProjectId" id="1ieAas5RIVUHtTho8sjqwRPzr2c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1148dad5-0689-4669-8d2f-c6557d63b237" name="Default Changelist" comment="" />
+      <created>1602257751086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602257751086</updated>
+      <workItem from="1602257752877" duration="102000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
