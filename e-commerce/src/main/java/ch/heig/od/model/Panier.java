@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Panier {
-    private  Map<Long, LigneCommande> produitPagnier = new HashMap<Long, LigneCommande>();
+    private  Map<Integer, LigneCommande> produitPagnier = new HashMap<Integer, LigneCommande>();
     public void addPagnier(Produit produit, int quantite){
         LigneCommande ligneCommande = produitPagnier.get(produit.getIdProduit());
         if(ligneCommande==null){

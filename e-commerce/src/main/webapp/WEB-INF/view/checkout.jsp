@@ -1,10 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Lenovo T50s
-  Date: 23.10.2020
-  Time: 00:09
-  To change this template use File | Settings | File Templates.
---%>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html  lang="en">
 <head>
@@ -12,36 +8,14 @@
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
     <title>All Products </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"  type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
             rel="stylesheet"
     />
-
 </head>
 <body>
-<div class="container">
-    <div class="navbar">
-        <div class="logo">
-            <img src ="#" width="125px">
-        </div>
-        <nav>
-            <ul id= "MenuItems">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">produit</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Account</a></li>
-
-            </ul>
-        </nav>
-        <img src="#," width="30px" height="30" height="30px">
-        <img src="#," class="menu-icon" onclick="menutoggle()">
-
-    </div>
-</div>
-
+<jsp:include page="../../head.jsp"></jsp:include>
 <!----------------------Account-page------------------->
 <div class="account-page">
     <div class="container">
@@ -58,15 +32,22 @@
 
 
                     <form id="LoginForm">
-                        <input type="text" placeholder="Username">
-                        <input type="password" placeholder="Password">
+                        <input type="text" name="username" value="username">
+                        <input type="password" name="password" value="password">
                         <button type="submit" class="btn">Login</button>
                         <a href="#">Forgot password</a>
                         <br>
                         <a href="#">or Signe Up</a>
 
-
                     </form>
+                    <c:if test="${errors != null}">
+                        Erreurs:
+                        <ul>
+                            <c:forEach items="${errors}" var="error">
+                                <li>${error}</li>
+                            </c:forEach>
+                        </ul>
+                    </c:if>
                 </div>
             </div>
         </div>
@@ -75,46 +56,6 @@
     </div>
 </div>
 
-
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="foot-col-1">
-                <h3>Dowload Our App</h3>
-                <p> Dowload App for Android and ios mobile phone.</p>
-                <div class="app-logo">
-                    <img src="#">
-                    <img src="#">
-                </div>
-            </div>
-            <div class="foot-col-2">
-                <img class="#">
-                <p>our purpose is to sustainably Make the Pleasure And
-                    Benfits of sports accessible to the Many.
-                </p>
-            </div>
-            <div class="foot-col-3">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li>Coupons</li>
-                    <li>Blog Post</li>
-                    <li>Return Policy</li>
-                    <li>join Affiliate</li>
-                </ul>
-            </div>
-            <div class="foot-col-4">
-                <h3>Follow us</h3>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>Instagram</li>
-                    <li>YouTude</li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <p class="copyright">copyright 2020 - Easy Tutorials</p>
-    </div>
-</div>
+<jsp:include page="../../foot.jsp"></jsp:include>
 </body>
 </html>

@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet("/liste")
-public class Liste extends HttpServlet {
+@WebServlet("/detail")
+public class DetailProduct extends HttpServlet {
     @Inject
     private EcommerceDao service;
 
-
-   @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Produit> produits = service.listProduits();
-        request.setAttribute("produit", produits);
-        request.getRequestDispatcher("/WEB-INF/view/produits.jsp").forward(request, response);
+        String produit = request.getParameter("produit");
+        request.setAttribute("produit", produit);
+        request.getRequestDispatcher("/WEB-INF/view/product-detail.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

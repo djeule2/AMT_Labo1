@@ -12,16 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/liste")
-public class Liste extends HttpServlet {
+@WebServlet("/CatMan")
+public class ManShoes  extends HttpServlet {
     @Inject
     private EcommerceDao service;
 
-
-   @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Produit> produits = service.listProduits();
+        List<Produit> produits = service.listProduitParCategorie(1);
+
         request.setAttribute("produit", produits);
-        request.getRequestDispatcher("/WEB-INF/view/produits.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/manShoes.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

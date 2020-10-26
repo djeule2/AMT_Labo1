@@ -11,6 +11,7 @@ public class Categorie {
 
     Categorie(){}
 
+
     public Categorie(Long idCategorie, String nomCategorie, String description) {
         this.idCategorie = idCategorie;
         this.nomCategorie = nomCategorie;

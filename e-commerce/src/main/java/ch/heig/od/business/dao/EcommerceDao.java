@@ -14,26 +14,27 @@ public interface EcommerceDao {
      *
      * @return
      */
-   // public Produit getProduit(Long idPro);
+    public Produit getProduit(int idPro);
 
     /**
      *
-     * @param produit
+     * @param
      *
      */
-    //public void addProduit(Produit produit, Long idCat);
+    public void addProduit(Produit produitt);
     /**
      *
      * @return
      */
-  //  public List<Produit> listProduits();
+    public List<Produit> listProduits();
 
     /**
      *
      * @param idCat
      * @return
      */
-   // public List<Produit>listProduitParCategorie(Long idCat);
+    public List<Produit>listProduitParCategorie(int idCat);
+
 
     /**
      *
@@ -87,7 +88,7 @@ public interface EcommerceDao {
      *
      * @param user
      */
-   // public void ajouterUser (User user);
+    public void ajouterUser (Client user);
 
     /**
      *

@@ -1,27 +1,31 @@
 package ch.heig.od.model;
 
 public class Produit {
-    private Long idProduit;
+    private int idProduit;
     private int prix;
     private String nomProduit;
     private String description;
-    private Categorie categorie;
+    private int  idCategorie;
     private int quantite;
     private String photos;
+    private String couleur;
+    private int taille;
 
     public Produit(){}
 
-    public Produit(Long idProduit, int prix, String nomProduit, String description, Categorie categorie, int quantite, String photos) {
-        this.idProduit = idProduit;
+    public Produit( String nomProduit, int prix, String description, int quantite, String photos,String couleur, int taille, int idCategorie) {
+
         this.prix = prix;
         this.nomProduit = nomProduit;
         this.description = description;
-        this.categorie = categorie;
         this.quantite = quantite;
         this.photos = photos;
+        this.couleur = couleur;
+        this.taille = taille;
+        this.idCategorie = idCategorie;
     }
 
-    public Long getIdProduit() {
+    public int getIdProduit() {
         return idProduit;
     }
 
@@ -33,8 +37,8 @@ public class Produit {
         return nomProduit;
     }
 
-    public Categorie getCategorie() {
-        return categorie;
+    public int getidCategorie() {
+        return idCategorie;
     }
 
     public String getDescription() {
@@ -49,7 +53,15 @@ public class Produit {
         return photos;
     }
 
-    public void setIdProduit(Long idProduit) {
+    public String getCouleur() {
+        return couleur;
+    }
+
+    public int getTaille() {
+        return taille;
+    }
+
+    public void setIdProduit(int idProduit) {
         this.idProduit = idProduit;
     }
 
@@ -61,8 +73,8 @@ public class Produit {
         this.nomProduit = nomProduit;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
+    public void setIdCategorie(int idCategorie) {
+        this.idCategorie = idCategorie;
     }
 
     public void setDescription(String description) {
@@ -75,5 +87,13 @@ public class Produit {
 
     public void setPhotos(String photos) {
         this.photos = photos;
+    }
+
+    public void setCouleur(String couleur) {
+        this.couleur = couleur;
+    }
+
+    public void setTaille(int taille) {
+        this.taille = taille;
     }
 }

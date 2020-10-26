@@ -12,16 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/liste")
-public class Liste extends HttpServlet {
+@WebServlet("/home")
+public class Home extends HttpServlet {
+
     @Inject
     private EcommerceDao service;
 
 
-   @Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Produit> produits = service.listProduits();
         request.setAttribute("produit", produits);
-        request.getRequestDispatcher("/WEB-INF/view/produits.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
