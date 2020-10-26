@@ -59,9 +59,9 @@
                 </c:forEach>
             </div>
             <div class="row">
-                <c:forEach items="${produit}" var="produits">
+                <c:forEach items="${produit}">
                     <div class="col-4">
-                        <a href="product-detail">
+                        <a href="product-detail" id="${produits.idProduit}" >
                             <img src="img/${produits.photos}">
                         </a>
                         <h4>${produits.nomProduit} </h4>

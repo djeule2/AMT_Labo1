@@ -26,7 +26,7 @@ public class EcommerceDaoImpl implements EcommerceDao {
     public List<Produit>listProduitParCategorie(int idCat){
         List<Produit> resultat = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
-             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM produit where produit.Categorie_idCategorie = value (?)");){
+             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM produit where produit.Categorie_idCategorie LIKE ?");){
             pstmt.setInt(1, idCat);
 
 //            Connection connection = dataSource.getConnection();
