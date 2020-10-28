@@ -25,9 +25,6 @@ public class EcommerceDaoImpl implements EcommerceDao {
         try (Connection connection = dataSource.getConnection();
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM produit where produit.Categorie_idCategorie LIKE ?");){
             pstmt.setInt(1, idCat);
-
-//            Connection connection = dataSource.getConnection();
-//            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM contacts");
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -41,9 +38,7 @@ public class EcommerceDaoImpl implements EcommerceDao {
                 //  produit.setCategorie(rs.getString("categorie"));
                 resultat.add(produit);
             }
-//            pstmt.close();
-//            connection.close();
-        } catch (SQLException e) {
+     } catch (SQLException e) {
             Logger.getLogger(EcommerceDaoImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return resultat;
@@ -71,9 +66,7 @@ public class EcommerceDaoImpl implements EcommerceDao {
         List<Produit> resultat = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM produit ");){
-//            Connection connection = dataSource.getConnection();
-//            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM contacts");
-            ResultSet rs = pstmt.executeQuery();
+           ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
                 Produit  produit = new Produit();
@@ -87,9 +80,7 @@ public class EcommerceDaoImpl implements EcommerceDao {
               //  produit.setCategorie(rs.getString("categorie"));
                 resultat.add(produit);
             }
-//            pstmt.close();
-//            connection.close();
-        } catch (SQLException e) {
+       } catch (SQLException e) {
             Logger.getLogger(EcommerceDaoImpl.class.getName()).log(Level.SEVERE, null, e);
         }
         return resultat;
