@@ -29,7 +29,7 @@ public class Produit {
         return idProduit;
     }
 
-    public double getPrix() {
+    public int getPrix() {
         return prix;
     }
 

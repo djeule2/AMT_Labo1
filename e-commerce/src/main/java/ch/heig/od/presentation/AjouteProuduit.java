@@ -19,18 +19,18 @@ public class AjouteProuduit extends HttpServlet {
     private EcommerceDao service;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/vew/registerProduct.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/view/registerProduct.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nomProduit = request.getParameter("nomProduit");
-        int prixProduit = request.getIntHeader("prixProduit");
+        int prixProduit = Integer.parseInt(request.getParameter("prixProduit"));
         String description = request.getParameter("description");
-        int quantite = request.getIntHeader("quantite");
+         int quantite = Integer.parseInt(request.getParameter("quantite"));
         String photos = request.getParameter("photos");
         String couleur = request.getParameter("couleur");
-        int taille = request.getIntHeader("taille");
-        int idCategorie = request.getIntHeader("idCategorie");
+        int taille = Integer.parseInt( request.getParameter("taille"));
+        int idCategorie = Integer.parseInt(request.getParameter("idCategorie"));
 
         List<String> errors = new ArrayList<>();
         if (nomProduit == null || nomProduit.trim().equals("")) {
@@ -62,7 +62,7 @@ public class AjouteProuduit extends HttpServlet {
         }
 
         request.setAttribute("nomProduit", nomProduit);
-        request.setAttribute("idCategorie", idCategorie);
+        request.setAttribute("Categorie_idCategorie", idCategorie);
         request.setAttribute("photos", photos);
         request.setAttribute("prixProduit", prixProduit);
         request.setAttribute("description", description);
@@ -72,7 +72,7 @@ public class AjouteProuduit extends HttpServlet {
 
         if (errors.size() == 0) {
             service.addProduit(new Produit(nomProduit, prixProduit,  description, quantite, photos, couleur, taille, idCategorie ));
-            response.sendRedirect(request.getContextPath() + "/liste");
+            response.sendRedirect(request.getContextPath() + "/produits");
         } else {
             request.setAttribute("errors", errors);
             request.getRequestDispatcher("/WEB-INF/pages/registerProduct.jsp").forward(request, response);

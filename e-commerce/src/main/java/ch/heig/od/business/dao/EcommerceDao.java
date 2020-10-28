@@ -22,6 +22,14 @@ public interface EcommerceDao {
      *
      */
     public void addProduit(Produit produitt);
+
+    /**
+     *
+     * @param
+     *
+     */
+    public void addLigneCommande(LigneCommande ligneCommande);
+
     /**
      *
      * @return
@@ -34,6 +42,10 @@ public interface EcommerceDao {
      * @return
      */
     public List<Produit>listProduitParCategorie(int idCat);
+
+    /**
+     * */
+    public List<LigneCommande>listeLigneCommande(int idPagnier);
 
 
     /**
@@ -104,5 +116,14 @@ public interface EcommerceDao {
      * @return
      */
    // public Commande enreigistrerCommande(Panier panier, Client client);
+
+    /**
+     *
+     * @param userName
+     * @param passwrd
+     * @return
+     */
+
+    public Client checkLogin(String userName, String passwrd);
 
 }

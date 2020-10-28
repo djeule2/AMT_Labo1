@@ -5,7 +5,7 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Products </title>
+    <title>register Products </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"  type="text/css">
@@ -27,7 +27,7 @@
                     <div class="col-2">
                         <div class="form-container">
                                 <div class="form-btn">
-                                    <span>register</span>
+                                    <span>registerProduct</span>
                                     <hr id = "Indicator">
                                 </div>
 
@@ -64,7 +64,7 @@
 
                                 <div id="photos">
                                     <label for="photos">photos</label>
-                                    <input type="text"  name="photosr" value="${photos}">
+                                    <input type="text"  name="photos" value="${photos}">
                                 </div>
 
                                 <div id="idCategorie">

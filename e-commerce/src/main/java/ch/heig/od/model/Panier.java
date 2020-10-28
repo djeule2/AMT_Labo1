@@ -9,11 +9,11 @@ public class Panier {
     public void addPagnier(Produit produit, int quantite){
         LigneCommande ligneCommande = produitPagnier.get(produit.getIdProduit());
         if(ligneCommande==null){
-            LigneCommande com_produit = new LigneCommande();
-            com_produit.setProduit(produit);
-            com_produit.setQuantite(quantite);
-            com_produit.setPrix(produit.getPrix());
-            produitPagnier.put(produit.getIdProduit(), com_produit);
+            LigneCommande art = new LigneCommande();
+            art.setProduit(produit.getIdProduit());
+            art.setQuantite(quantite);
+            art.setPrix(produit.getPrix());
+            produitPagnier.put(produit.getIdProduit(), art);
         }
         else {
             ligneCommande.setQuantite(ligneCommande.getQuantite() + quantite);

@@ -23,9 +23,9 @@
 
 <div class="small-container single-product">
     <div class="row">
-        <div class="col-2">
+        <div class="col-2" >
 
-            <img src="img/${produit.photos}" with = "100%" id = "product-img">
+            <img src="img/${produit.photos}"/>
             <div class="small-img-row">
                 <div class= "small-img-col">
                     <img src= "#" width="100%" class="small-img">
@@ -43,10 +43,9 @@
         </div>
         <div class="col-2">
 
-            <p>${produit.nomProduit}</p>
-            <h1>Red Printd T-shoes by HRX</h1>
-            <h4>${produit.prix}</h4>
 
+            <h1>${produit.nomProduit}</h1>
+            <h4>${produit.prix}</h4>
             <select>
                 <option>Select Size</option>
                 <option>38</option>
@@ -55,13 +54,12 @@
                 <option>44</option>
                 <option>46</option>
             </select>
-            <input type="number" value="1">
-            <a href="#" class="btn">Add To Cart</a>
+            <input type="number" name="quantite" value="1">
+            <a href="cart?idProduit=${produits.idProduit}&nomProduit=${produits.nomProduit}&prix=${produits.prix}&description=${produits.description}&photos=${produits.photos}&couleur=${produits.couleur}&quantite=${value}" class="btn">Add To Cart</a>
             <h3>Product Details <i class ="fa fa-ident">
             </i></h3>
-            <p>Give your summer wardrobe a style upgrate with the HRX
-                Men' Active T-shirt. Team it with a pair of shorts for your
-                morning workout or a denims for an evening out with the guys.
+            <p>
+                ${produit.description}
             </p>
         </div>
 
@@ -72,39 +70,6 @@
 
 </div>
 
-<!------------------title--------------------->
-<div class="small-container">
-    <div class="row row-2">
-        <h2> related Products</h2>
-        <p>View More</p>
-    </div>
-
-</div>
-
-<!----------------products------------------->
-
-<div class="small-container">
-    <div class="row">
-
-        <div class="col-4">
-            <img src="#">
-            <h4>Red Printed T-Shirt</h4>
-            <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-half-o"></i>
-
-            </div>
-
-            <p>$50.00</p>
-
-        </div>
-
-    </div>
-
-</div>
 <!---------------------------------footer---------------------->
 <jsp:include page="../../foot.jsp"></jsp:include>
 </body>

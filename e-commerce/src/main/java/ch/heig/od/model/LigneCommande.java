@@ -1,49 +1,41 @@
 package ch.heig.od.model;
 
 public class LigneCommande {
-    private Long id;
-    private Produit produit;
+
+    private int idproduit;
     private int quantite;
-    private double prix;
+    private int prix;
 
     public LigneCommande(){}
 
-    public LigneCommande(Long id, Produit produit, int quantite, double prix) {
-        this.id = id;
-        this.produit = produit;
+    public LigneCommande(int idproduit, int quantite, int prix) {
+
+        this.idproduit = idproduit;
         this.quantite = quantite;
         this.prix = prix;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public Produit getProduit() {
-        return produit;
+    public int getProduit() {
+        return idproduit;
     }
 
     public int getQuantite() {
         return quantite;
     }
 
-    public double getPrix() {
+    public int getPrix() {
         return prix;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setProduit(Produit produit) {
-        this.produit = produit;
+    public void setProduit(int idproduit) {
+        this.idproduit = idproduit;
     }
 
     public void setQuantite(int quantite) {
         this.quantite = quantite;
     }
 
-    public void setPrix(double prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
 }

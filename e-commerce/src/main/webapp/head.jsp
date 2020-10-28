@@ -13,6 +13,7 @@
                             <li><a href="womanShoes">Wommen</a></li>
                         </ul>
                     </li>
+                    <li><a href="registerProduct">registerProducts</a></li>
                     <li><a href="register">register</a></li>
                     <li><a href="checkout">login</a></li>
                     <li><a href="cart">pagnier</a></li>

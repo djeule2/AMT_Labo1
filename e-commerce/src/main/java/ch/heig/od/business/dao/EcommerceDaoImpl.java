@@ -1,9 +1,6 @@
 package ch.heig.od.business.dao;
 
-import ch.heig.od.model.Categorie;
-import ch.heig.od.model.Client;
-import ch.heig.od.model.Produit;
-import ch.heig.od.model.User;
+import ch.heig.od.model.*;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
@@ -81,11 +78,12 @@ public class EcommerceDaoImpl implements EcommerceDao {
             while (rs.next()) {
                 Produit  produit = new Produit();
                 //produit.setCategorie(rs.getString("categorie"));
-               // produit.setIdProduit(rs.getString("idProduit"));
+                produit.setIdProduit(rs.getInt("idProduit"));
                 produit.setNomProduit(rs.getString("nomProduit"));
                 produit.setPrix(rs.getInt("prix"));
                 produit.setDescription(rs.getString("description"));
                 produit.setPhotos(rs.getString("photos"));
+                produit.setCouleur(rs.getString("couleur"));
               //  produit.setCategorie(rs.getString("categorie"));
                 resultat.add(produit);
             }
@@ -97,15 +95,39 @@ public class EcommerceDaoImpl implements EcommerceDao {
         return resultat;
     }
 
+    public List<LigneCommande>listeLigneCommande(int idPagnier){
+        List<LigneCommande> resultat = new ArrayList<>();
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM lignecommande where lignecommande.Pagnier_idPagnier LIKE ?");){
+            pstmt.setInt(1, idPagnier);
 
+//            Connection connection = dataSource.getConnection();
+//            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM contacts");
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                LigneCommande  ligneCommande = new LigneCommande();
+                //ligneCommande.setProduit(rs.getInt("Produit_idProduit"));
+                ligneCommande.setQuantite(rs.getInt("nomProduit"));
+                ligneCommande.setPrix(rs.getInt("prix"));
+                resultat.add(ligneCommande);
+            }
+//            pstmt.close();
+//            connection.close();
+        } catch (SQLException e) {
+            Logger.getLogger(EcommerceDaoImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return resultat;
+
+    }
     public void addProduit(Produit produit){
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement pstmt = connection.prepareStatement
-                        ("insert into produit (nomProduit, prixProduit,  description, quantite, photos, couleur, taille,  idCategorie) values (?,?, ?,?,?,?,?,?)")){
+                        ("insert into produit (nomProduit, prix,  description, quantite, photos, couleur, taille,  Categorie_idCategorie) values (?,?,?,?,?,?,?,?)")){
 
             pstmt.setString(1,produit.getNomProduit());
-            pstmt.setDouble(2,produit.getPrix());
+            pstmt.setInt(2,produit.getPrix());
             pstmt.setString(3, produit.getDescription());
             pstmt.setInt(4, produit.getQuantite());
             pstmt.setString(5, produit.getPhotos());
@@ -124,7 +146,7 @@ public class EcommerceDaoImpl implements EcommerceDao {
         try (
                 Connection connection = dataSource.getConnection();
                 PreparedStatement pstmt = connection.prepareStatement
-                        ("insert into client (nomClient, email, tel, userName, passwrd) values (?,?, ?,?,?)")){
+                        ("insert into client (nomClient, email, tel, userName, passwrd) values (?,?,?,?,?)")){
                 // pstmt.setString(1, produit.getIdProduit());
                 pstmt.setString(1,user.getNomClient());
                 pstmt.setString(2,user.getEmail());
@@ -140,6 +162,44 @@ public class EcommerceDaoImpl implements EcommerceDao {
 
     }
 
+    public Client checkLogin(String userName, String passwrd){
+        Client client = new Client();
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM client where userName= ? and passwrd = ? ");){
+
+           pstmt.setString(1, userName);
+           pstmt.setString(2, passwrd);
+            ResultSet rs = pstmt.executeQuery();
+            client = null;
+            if (rs.next()){
+                client = new Client();
+                client.setUserName(userName);
+                client.setNomClient(rs.getString("nomClient"));
+            }
 
 
+        } catch (SQLException e) {
+            Logger.getLogger(EcommerceDaoImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return client;
+
+    }
+
+    public void addLigneCommande(LigneCommande ligneCommande){
+        try (
+                Connection connection = dataSource.getConnection();
+                PreparedStatement pstmt = connection.prepareStatement
+                        ("insert into ligneCommande (Produit_idProduit, quantite, ) values (?,?)")){
+
+            pstmt.setInt(1,ligneCommande.getProduit());
+            pstmt.setInt(2,ligneCommande.getQuantite());
+
+
+//            pstmt.close();
+//            connection.close();
+        } catch (SQLException e) {
+            Logger.getLogger(EcommerceDaoImpl.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+    }
 }

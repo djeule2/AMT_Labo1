@@ -32,7 +32,7 @@
     <div class="row">
             <c:forEach items="${produit}" var="produits">
                 <div class="col-4">
-                    <a href="product-detail">
+                    <a href="product-detail?idProduit=${produits.idProduit}&nomProduit=${produits.nomProduit}&prix=${produits.prix}&description=${produits.description}&photos=${produits.photos}&couleur=${produits.couleur}">
                         <img src="img/${produits.photos}">
                     </a>
                     <h4>${produits.nomProduit} </h4>
